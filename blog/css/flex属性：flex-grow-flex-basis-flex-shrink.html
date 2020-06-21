@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>flex属性：flex-grow/flex-basis/flex-shrink | pellets的博客</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/pellets.png">
+    <meta name="description" content="个人博客">
+    <link rel="preload" href="/assets/css/0.styles.c4c90ffb.css" as="style"><link rel="preload" href="/assets/js/app.ef30b5dc.js" as="script"><link rel="preload" href="/assets/js/2.4fe56f19.js" as="script"><link rel="preload" href="/assets/js/17.d1a2782d.js" as="script"><link rel="prefetch" href="/assets/js/10.7522c32a.js"><link rel="prefetch" href="/assets/js/11.0ff3cecc.js"><link rel="prefetch" href="/assets/js/12.4ad6c375.js"><link rel="prefetch" href="/assets/js/13.f502632b.js"><link rel="prefetch" href="/assets/js/14.a50cc12b.js"><link rel="prefetch" href="/assets/js/15.7354ea4b.js"><link rel="prefetch" href="/assets/js/16.cedd1a69.js"><link rel="prefetch" href="/assets/js/18.2e7cb4e3.js"><link rel="prefetch" href="/assets/js/19.6eb27801.js"><link rel="prefetch" href="/assets/js/20.8368ceef.js"><link rel="prefetch" href="/assets/js/21.46750492.js"><link rel="prefetch" href="/assets/js/22.65ec202f.js"><link rel="prefetch" href="/assets/js/23.441e14d8.js"><link rel="prefetch" href="/assets/js/24.007f7a2a.js"><link rel="prefetch" href="/assets/js/25.538d0e27.js"><link rel="prefetch" href="/assets/js/26.a5e4a3fa.js"><link rel="prefetch" href="/assets/js/27.6fc10603.js"><link rel="prefetch" href="/assets/js/3.1a94f129.js"><link rel="prefetch" href="/assets/js/4.dbf7450a.js"><link rel="prefetch" href="/assets/js/5.8949b159.js"><link rel="prefetch" href="/assets/js/6.e89db85d.js"><link rel="prefetch" href="/assets/js/7.96f8363d.js"><link rel="prefetch" href="/assets/js/8.09a20a41.js"><link rel="prefetch" href="/assets/js/9.08d48712.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c4c90ffb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">pellets的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/reprint/" class="nav-link">
+  优文转载
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术总结" class="dropdown-title"><span class="title">技术总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/css/" class="nav-link router-link-active">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/blog/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/blog/云计算/" class="nav-link">
+  云计算
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/reprint/" class="nav-link">
+  优文转载
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术总结" class="dropdown-title"><span class="title">技术总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/css/" class="nav-link router-link-active">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/blog/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/blog/云计算/" class="nav-link">
+  云计算
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>css相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/css/" aria-current="page" class="sidebar-link">css相关</a></li><li><a href="/blog/css/BFC的作用.html" class="sidebar-link">BFC的作用</a></li><li><a href="/blog/css/div嵌套img时多出空白的原因及解决办法.html" class="sidebar-link">div嵌套img时多出空白的原因及解决办法</a></li><li><a href="/blog/css/flex属性：flex-grow-flex-basis-flex-shrink.html" class="active sidebar-link">flex属性：flex-grow/flex-basis/flex-shrink</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p><a href="###flex%E5%B1%9E%E6%80%A7%EF%BC%9Aflex-grow/flex-basis/flex-shrink"></a>
+flex的“可伸缩”主要体现在flex-grow/flex-basis/flex-shrink这三个属性上</p> <h4 id="flex-basis"><a href="#flex-basis" class="header-anchor">#</a> flex-basis</h4> <p>未应用flex-grow和flex-shrink之前，flexbox中的项的初始大小,默认取值是auto</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">.container ul</span><span class="token punctuation">{</span>
+            <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+            <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">li</span><span class="token punctuation">{</span>
+            <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+            <span class="token property">list-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">li:nth-child(1)</span><span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">li:nth-child(2)</span><span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">li:nth-child(3)</span><span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>这里是li11111111111111111111111111111111111111111<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>这里是li<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>这里是li<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div><p><img src="https://img-blog.csdnimg.cn/2020051720595380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUwOTc5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p> <h4 id="flex-grow"><a href="#flex-grow" class="header-anchor">#</a> flex-grow</h4> <p>应用了flex-basis后如果有剩余空间该如何分配到每个项上，默认是不分配，即flex-grow: 0, 这里设置的数值含义：此项所占用剩余空间的比值 =flex-grow取值 / 所有的项设置的flex-grow的属性值的总和，例如：</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">.container ul</span><span class="token punctuation">{</span>
+            <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+            <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">li</span><span class="token punctuation">{</span>
+            <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+            <span class="token property">list-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+            <span class="token comment">/*flex-basis: 0;*/</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">li:nth-child(1)</span><span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+            <span class="token property">flex-grow</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">li:nth-child(2)</span><span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+            <span class="token property">flex-grow</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">li:nth-child(3)</span><span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+            <span class="token property">flex-grow</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+     <span class="token comment">&lt;!--   &lt;li&gt;这里是li11111111111111111111111111111111111111111&lt;/li&gt;
+        &lt;li&gt;这里是li&lt;/li&gt;
+        &lt;li&gt;这里是li&lt;/li&gt;--&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br></div></div><p>应用flex-grow前：
+<img src="https://img-blog.csdnimg.cn/20200517210806697.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUwOTc5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+应用flex-grow后：
+<img src="https://img-blog.csdnimg.cn/20200517211254884.png" alt="在这里插入图片描述"></p> <h4 id="flex-shrink"><a href="#flex-shrink" class="header-anchor">#</a> flex-shrink</h4> <p>应用flex-basis后如果超出了flexbox范围，该怎么收缩，默认值时1，即每项都等比例收缩。收缩公式：
+缩小的值 = （ ( 此项的flex-shrink * flex-basis) / 所有项的 （flex-shrink * flex-basis）之和 ） * 超出flexbox的空间大小</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">.container ul</span><span class="token punctuation">{</span>
+            <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 900px<span class="token punctuation">;</span>
+            <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">li</span><span class="token punctuation">{</span>
+            <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+            <span class="token property">list-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+            <span class="token comment">/*flex-basis: 0;*/</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">li:nth-child(1)</span><span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 1000px<span class="token punctuation">;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+            <span class="token property">flex-grow</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">li:nth-child(2)</span><span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+            <span class="token property">flex-grow</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token selector">li:nth-child(3)</span><span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+            <span class="token property">flex-grow</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+     <span class="token comment">&lt;!--   &lt;li&gt;这里是li11111111111111111111111111111111111111111&lt;/li&gt;
+        &lt;li&gt;这里是li&lt;/li&gt;
+        &lt;li&gt;这里是li&lt;/li&gt;--&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br></div></div><p><img src="https://img-blog.csdnimg.cn/20200517213307875.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUwOTc5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+flex属性是这三个属性的合写：
+flex: flex-grow flex-shrink flex-basis|auto|initial|inherit;</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/21/2020, 2:43:07 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/css/div嵌套img时多出空白的原因及解决办法.html" class="prev">
+        div嵌套img时多出空白的原因及解决办法
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ef30b5dc.js" defer></script><script src="/assets/js/2.4fe56f19.js" defer></script><script src="/assets/js/17.d1a2782d.js" defer></script>
+  </body>
+</html>

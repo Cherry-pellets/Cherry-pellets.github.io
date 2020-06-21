@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>centos7环境下安装jdk8以及配置环境变量 | pellets的博客</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/pellets.png">
+    <meta name="description" content="个人博客">
+    <link rel="preload" href="/assets/css/0.styles.c4c90ffb.css" as="style"><link rel="preload" href="/assets/js/app.ef30b5dc.js" as="script"><link rel="preload" href="/assets/js/2.4fe56f19.js" as="script"><link rel="preload" href="/assets/js/25.538d0e27.js" as="script"><link rel="prefetch" href="/assets/js/10.7522c32a.js"><link rel="prefetch" href="/assets/js/11.0ff3cecc.js"><link rel="prefetch" href="/assets/js/12.4ad6c375.js"><link rel="prefetch" href="/assets/js/13.f502632b.js"><link rel="prefetch" href="/assets/js/14.a50cc12b.js"><link rel="prefetch" href="/assets/js/15.7354ea4b.js"><link rel="prefetch" href="/assets/js/16.cedd1a69.js"><link rel="prefetch" href="/assets/js/17.d1a2782d.js"><link rel="prefetch" href="/assets/js/18.2e7cb4e3.js"><link rel="prefetch" href="/assets/js/19.6eb27801.js"><link rel="prefetch" href="/assets/js/20.8368ceef.js"><link rel="prefetch" href="/assets/js/21.46750492.js"><link rel="prefetch" href="/assets/js/22.65ec202f.js"><link rel="prefetch" href="/assets/js/23.441e14d8.js"><link rel="prefetch" href="/assets/js/24.007f7a2a.js"><link rel="prefetch" href="/assets/js/26.a5e4a3fa.js"><link rel="prefetch" href="/assets/js/27.6fc10603.js"><link rel="prefetch" href="/assets/js/3.1a94f129.js"><link rel="prefetch" href="/assets/js/4.dbf7450a.js"><link rel="prefetch" href="/assets/js/5.8949b159.js"><link rel="prefetch" href="/assets/js/6.e89db85d.js"><link rel="prefetch" href="/assets/js/7.96f8363d.js"><link rel="prefetch" href="/assets/js/8.09a20a41.js"><link rel="prefetch" href="/assets/js/9.08d48712.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c4c90ffb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">pellets的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/reprint/" class="nav-link">
+  优文转载
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术总结" class="dropdown-title"><span class="title">技术总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/blog/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/blog/云计算/" class="nav-link">
+  云计算
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/reprint/" class="nav-link">
+  优文转载
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术总结" class="dropdown-title"><span class="title">技术总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/blog/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/blog/云计算/" class="nav-link">
+  云计算
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>云计算相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/%E4%BA%91%E8%AE%A1%E7%AE%97/" aria-current="page" class="sidebar-link">云计算相关</a></li><li><a href="/blog/云计算/centos7中用hadoop执行java文件.html" class="sidebar-link">centos7中用hadoop执行java文件</a></li><li><a href="/blog/云计算/centos7环境下安装jdk8以及配置环境变量.html" class="active sidebar-link">centos7环境下安装jdk8以及配置环境变量</a></li><li><a href="/blog/云计算/hadoop中SequenceFile的使用.html" class="sidebar-link">hadoop中SequenceFile的使用</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p><a href="###centos7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85jdk8%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"></a></p> <h4 id="_1-获取jdk8下载链接"><a href="#_1-获取jdk8下载链接" class="header-anchor">#</a> 1.获取jdk8下载链接</h4> <p>打开<a href="https://www.oracle.com/cn/java/technologies/javase-jdk8-downloads.html" target="_blank" rel="noopener noreferrer">网址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>选择合适自己系统的jdk版本，点击下载
+<img src="https://img-blog.csdnimg.cn/20200324210328336.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUwOTc5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+要注意选择.tar.gz的文件，如果不知道系统是32bit还是64bit,可以用<code>uname -a</code>查看
+<img src="https://img-blog.csdnimg.cn/2020032421050333.png" alt="在这里插入图片描述">
+点击同意：
+<img src="https://img-blog.csdnimg.cn/20200324210650631.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUwOTc5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+然后会自动跳转登录：
+<img src="https://img-blog.csdnimg.cn/20200324210745792.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUwOTc5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+登录成功后会出现文件下载链接以及文件名称：
+<img src="https://img-blog.csdnimg.cn/20200324210853144.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUwOTc5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p> <h4 id="_2-下载并解压"><a href="#_2-下载并解压" class="header-anchor">#</a> 2.下载并解压</h4> <p>然后在centos中输入以下命令， 格式为：wget  -O 文件名  网址
+（文件名和网址是上图中复制粘贴过来的）
+<img src="https://img-blog.csdnimg.cn/20200324212023473.png" alt="在这里插入图片描述">
+下载完成后解压文件：命令格式：tar zxvf 压缩包名称 -C 目的地路径
+<img src="https://img-blog.csdnimg.cn/20200324211745398.png" alt="在这里插入图片描述"> <img src="https://img-blog.csdnimg.cn/20200324212249136.png" alt="在这里插入图片描述"></p> <h4 id="_3-配置环境变量"><a href="#_3-配置环境变量" class="header-anchor">#</a> 3.配置环境变量</h4> <p>解压后配置环境变量：输入<code>vi /etc/profile</code>进入vim编辑区
+<img src="https://img-blog.csdnimg.cn/2020032421231623.png" alt="在这里插入图片描述">
+按i进入输入模式，然后一直按↓使光标移到文件末尾，添加以下配置信息：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#set java environment
+JAVA_HOME=/usr/lib/jvm/jdk1.8.0_241
+CLASSPATH=.:${JAVA_HOME}/jre/lib/rt.jar:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar
+PATH=$PATH:${JAVA_HOME}/bin
+export JAVA_HOME CLASSPATH PATH
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><img src="https://img-blog.csdnimg.cn/20200325125837935.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUwOTc5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+添加完成后按esc退出插入模式，输入:wq保存并退出。
+然后输入<code>source /etc/profile</code>刷新环境变量，再输入<code>java -version</code>查看是否安装成功。
+<img src="https://img-blog.csdnimg.cn/20200324212948108.png" alt="在这里插入图片描述"></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/21/2020, 2:43:07 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/云计算/centos7中用hadoop执行java文件.html" class="prev">
+        centos7中用hadoop执行java文件
+      </a></span> <span class="next"><a href="/blog/云计算/hadoop中SequenceFile的使用.html">
+        hadoop中SequenceFile的使用
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ef30b5dc.js" defer></script><script src="/assets/js/2.4fe56f19.js" defer></script><script src="/assets/js/25.538d0e27.js" defer></script>
+  </body>
+</html>

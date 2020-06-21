@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>用c/c++语言程序实现Linux系统下的cp复制文件命令 | pellets的博客</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/pellets.png">
+    <meta name="description" content="个人博客">
+    <link rel="preload" href="/assets/css/0.styles.c4c90ffb.css" as="style"><link rel="preload" href="/assets/js/app.ef30b5dc.js" as="script"><link rel="preload" href="/assets/js/2.4fe56f19.js" as="script"><link rel="preload" href="/assets/js/12.4ad6c375.js" as="script"><link rel="prefetch" href="/assets/js/10.7522c32a.js"><link rel="prefetch" href="/assets/js/11.0ff3cecc.js"><link rel="prefetch" href="/assets/js/13.f502632b.js"><link rel="prefetch" href="/assets/js/14.a50cc12b.js"><link rel="prefetch" href="/assets/js/15.7354ea4b.js"><link rel="prefetch" href="/assets/js/16.cedd1a69.js"><link rel="prefetch" href="/assets/js/17.d1a2782d.js"><link rel="prefetch" href="/assets/js/18.2e7cb4e3.js"><link rel="prefetch" href="/assets/js/19.6eb27801.js"><link rel="prefetch" href="/assets/js/20.8368ceef.js"><link rel="prefetch" href="/assets/js/21.46750492.js"><link rel="prefetch" href="/assets/js/22.65ec202f.js"><link rel="prefetch" href="/assets/js/23.441e14d8.js"><link rel="prefetch" href="/assets/js/24.007f7a2a.js"><link rel="prefetch" href="/assets/js/25.538d0e27.js"><link rel="prefetch" href="/assets/js/26.a5e4a3fa.js"><link rel="prefetch" href="/assets/js/27.6fc10603.js"><link rel="prefetch" href="/assets/js/3.1a94f129.js"><link rel="prefetch" href="/assets/js/4.dbf7450a.js"><link rel="prefetch" href="/assets/js/5.8949b159.js"><link rel="prefetch" href="/assets/js/6.e89db85d.js"><link rel="prefetch" href="/assets/js/7.96f8363d.js"><link rel="prefetch" href="/assets/js/8.09a20a41.js"><link rel="prefetch" href="/assets/js/9.08d48712.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c4c90ffb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">pellets的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/reprint/" class="nav-link">
+  优文转载
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术总结" class="dropdown-title"><span class="title">技术总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/blog/Linux/" class="nav-link router-link-active">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/blog/云计算/" class="nav-link">
+  云计算
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/reprint/" class="nav-link">
+  优文转载
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术总结" class="dropdown-title"><span class="title">技术总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/blog/Linux/" class="nav-link router-link-active">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/blog/云计算/" class="nav-link">
+  云计算
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Linux相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Linux/" aria-current="page" class="sidebar-link">Linux相关</a></li><li><a href="/blog/Linux/Linux-make-makefile的使用.html" class="sidebar-link">Linux make/makefile的使用</a></li><li><a href="/blog/Linux/c语言实现linux系统中ls-ls-l命令.html" class="sidebar-link">c/c++实现linux系统中ls,ls -l命令</a></li><li><a href="/blog/Linux/shell脚本参数超过9个时的处理.html" class="sidebar-link">shell脚本参数超过9个时的处理</a></li><li><a href="/blog/Linux/用c语言程序实现Linux系统下的cp复制文件命令.html" class="active sidebar-link">用c/c++语言程序实现Linux系统下的cp复制文件命令</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="用c-c-语言程序实现linux系统下的cp复制文件命令"><a href="#用c-c-语言程序实现linux系统下的cp复制文件命令" class="header-anchor">#</a> 用c/c++语言程序实现Linux系统下的cp复制文件命令</h3> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;dirent.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;sys/stat.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;unistd.h&gt;</span></span>
+ 
+<span class="token comment">//复制文件</span>
+<span class="token keyword">int</span> <span class="token function">copy_file</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span> srcPath<span class="token punctuation">,</span><span class="token keyword">char</span> <span class="token operator">*</span>destPath<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">char</span> Buf<span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> count_read <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">long</span> fp_src_ltell <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>fp_src_atell <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	FILE<span class="token operator">*</span> fp_src <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span>srcPath<span class="token punctuation">,</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//只读方式打开</span>
+	FILE<span class="token operator">*</span> fp_dst <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span>destPath<span class="token punctuation">,</span><span class="token string">&quot;w&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//只写方式打开</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>fp_dst <span class="token operator">==</span><span class="token constant">NULL</span> <span class="token operator">||</span> fp_src <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;文件打开有问题\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token function">memset</span><span class="token punctuation">(</span>Buf<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		fp_src_ltell <span class="token operator">=</span> <span class="token function">ftell</span><span class="token punctuation">(</span>fp_src<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//上一次文件指针位置</span>
+		count_read <span class="token operator">=</span> <span class="token function">fread</span><span class="token punctuation">(</span>Buf<span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Buf<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>fp_src<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		fp_src_atell <span class="token operator">=</span> <span class="token function">ftell</span><span class="token punctuation">(</span>fp_src<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//当前文件指针位置</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>count_read<span class="token operator">&lt;</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//异常或到达末尾结束</span>
+			<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">feof</span><span class="token punctuation">(</span>fp_src<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+				<span class="token keyword">long</span> temp <span class="token operator">=</span> fp_src_atell <span class="token operator">-</span> fp_src_ltell<span class="token punctuation">;</span>
+				<span class="token function">fwrite</span><span class="token punctuation">(</span>Buf<span class="token punctuation">,</span>temp<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>fp_dst<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//成功</span>
+				<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+			<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">ferror</span><span class="token punctuation">(</span>fp_src<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+				<span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">&quot;fread error:&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+		<span class="token function">fwrite</span><span class="token punctuation">(</span>Buf<span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Buf<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>fp_dst<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span><span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  <span class="token comment">//其中argv[1]为源文件  argv[2]为目标文件</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//参数个数错误</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Usage srcfile destfile\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">char</span><span class="token operator">*</span> srcPath<span class="token operator">=</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">char</span><span class="token operator">*</span> destPath<span class="token operator">=</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">access</span><span class="token punctuation">(</span>destPath<span class="token punctuation">,</span>F_OK<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;目标文件已存在\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token function">copy_file</span><span class="token punctuation">(</span>srcPath<span class="token punctuation">,</span>destPath<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//文件进行拷贝</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br></div></div><p>运行结果：
+<img src="https://img-blog.csdnimg.cn/20200302114646386.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUwOTc5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"> <img src="https://img-blog.csdnimg.cn/20200302114656926.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUwOTc5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/21/2020, 2:43:07 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/Linux/shell脚本参数超过9个时的处理.html" class="prev">
+        shell脚本参数超过9个时的处理
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ef30b5dc.js" defer></script><script src="/assets/js/2.4fe56f19.js" defer></script><script src="/assets/js/12.4ad6c375.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Linux make/makefile的使用 | pellets的博客</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/pellets.png">
+    <meta name="description" content="个人博客">
+    <link rel="preload" href="/assets/css/0.styles.c4c90ffb.css" as="style"><link rel="preload" href="/assets/js/app.ef30b5dc.js" as="script"><link rel="preload" href="/assets/js/2.4fe56f19.js" as="script"><link rel="preload" href="/assets/js/8.09a20a41.js" as="script"><link rel="prefetch" href="/assets/js/10.7522c32a.js"><link rel="prefetch" href="/assets/js/11.0ff3cecc.js"><link rel="prefetch" href="/assets/js/12.4ad6c375.js"><link rel="prefetch" href="/assets/js/13.f502632b.js"><link rel="prefetch" href="/assets/js/14.a50cc12b.js"><link rel="prefetch" href="/assets/js/15.7354ea4b.js"><link rel="prefetch" href="/assets/js/16.cedd1a69.js"><link rel="prefetch" href="/assets/js/17.d1a2782d.js"><link rel="prefetch" href="/assets/js/18.2e7cb4e3.js"><link rel="prefetch" href="/assets/js/19.6eb27801.js"><link rel="prefetch" href="/assets/js/20.8368ceef.js"><link rel="prefetch" href="/assets/js/21.46750492.js"><link rel="prefetch" href="/assets/js/22.65ec202f.js"><link rel="prefetch" href="/assets/js/23.441e14d8.js"><link rel="prefetch" href="/assets/js/24.007f7a2a.js"><link rel="prefetch" href="/assets/js/25.538d0e27.js"><link rel="prefetch" href="/assets/js/26.a5e4a3fa.js"><link rel="prefetch" href="/assets/js/27.6fc10603.js"><link rel="prefetch" href="/assets/js/3.1a94f129.js"><link rel="prefetch" href="/assets/js/4.dbf7450a.js"><link rel="prefetch" href="/assets/js/5.8949b159.js"><link rel="prefetch" href="/assets/js/6.e89db85d.js"><link rel="prefetch" href="/assets/js/7.96f8363d.js"><link rel="prefetch" href="/assets/js/9.08d48712.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c4c90ffb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">pellets的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/reprint/" class="nav-link">
+  优文转载
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术总结" class="dropdown-title"><span class="title">技术总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/blog/Linux/" class="nav-link router-link-active">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/blog/云计算/" class="nav-link">
+  云计算
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/reprint/" class="nav-link">
+  优文转载
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术总结" class="dropdown-title"><span class="title">技术总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/node/" class="nav-link">
+  node
+</a></li><li class="dropdown-item"><!----> <a href="/blog/Linux/" class="nav-link router-link-active">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/blog/云计算/" class="nav-link">
+  云计算
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Linux相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Linux/" aria-current="page" class="sidebar-link">Linux相关</a></li><li><a href="/blog/Linux/Linux-make-makefile的使用.html" class="active sidebar-link">Linux make/makefile的使用</a></li><li><a href="/blog/Linux/c语言实现linux系统中ls-ls-l命令.html" class="sidebar-link">c/c++实现linux系统中ls,ls -l命令</a></li><li><a href="/blog/Linux/shell脚本参数超过9个时的处理.html" class="sidebar-link">shell脚本参数超过9个时的处理</a></li><li><a href="/blog/Linux/用c语言程序实现Linux系统下的cp复制文件命令.html" class="sidebar-link">用c/c++语言程序实现Linux系统下的cp复制文件命令</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p><a href="###make/makefile%E7%9A%84%E4%BD%BF%E7%94%A8"></a>
+需求：
+编写程序，统计学生的成绩，包括成绩的最大值、最小值、总和以及平均值， 并要求利用make工程管理器进行编译。
+（1）建立C程序 mymax.c
+（2）建立C程序 mymin.c
+（3）建立C程序 mysum.c
+（4）建立C程序 myavg.c
+（5）建立C程序 my.h
+（6）建立C程序 mymain.c
+（7）建立静态库libmylib.a
+（8）编译mymain.c程序
+（9）执行mymain程序</p> <h4 id="_1-目录："><a href="#_1-目录：" class="header-anchor">#</a> 1.目录：</h4> <p><img src="https://img-blog.csdnimg.cn/20200328151452409.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUwOTc5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p> <h4 id="_2-编写-c和-h文件"><a href="#_2-编写-c和-h文件" class="header-anchor">#</a> 2.编写.c和.h文件</h4> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token comment">// myMax.cpp</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">myMax</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> num<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">int</span> max<span class="token operator">=</span>a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>num<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&gt;</span>max<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			max<span class="token operator">=</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;maximum is %d\n&quot;</span><span class="token punctuation">,</span>max<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token comment">// myMin.cpp</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">myMin</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> num<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">int</span> min<span class="token operator">=</span>a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>num<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>min<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			min<span class="token operator">=</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;minimum is %d\n&quot;</span><span class="token punctuation">,</span>min<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token comment">// mySum.cpp</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">int</span> <span class="token function">mySum</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> num<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">int</span> sum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>num<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		sum<span class="token operator">+=</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Sum is %d\n&quot;</span><span class="token punctuation">,</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token comment">//myAvg.cpp</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+using namespace std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">myAvg</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> num<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">float</span> avg<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> sum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>num<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		sum<span class="token operator">+=</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	avg<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span>sum<span class="token operator">/</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span>num<span class="token punctuation">;</span>
+	cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;Average is &quot;</span><span class="token operator">&lt;&lt;</span>avg<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token comment">//my.h</span>
+<span class="token macro property">#<span class="token directive keyword">ifndef</span> MY_H</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> MY_H</span>
+<span class="token keyword">int</span> <span class="token function">myMax</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">myMin</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">mySum</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">myAvg</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token comment">//myMain.cpp</span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&quot;my.h&quot;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+using namespace std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> scores<span class="token punctuation">[</span><span class="token number">10000</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">int</span> num<span class="token punctuation">;</span>
+	
+	cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;input the number of students:&quot;</span><span class="token punctuation">;</span>
+	cin<span class="token operator">&gt;&gt;</span>num<span class="token punctuation">;</span>
+	cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;input the scores£º&quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>num<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		cin<span class="token operator">&gt;&gt;</span>scores<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token function">myMax</span><span class="token punctuation">(</span>scores<span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">myMin</span><span class="token punctuation">(</span>scores<span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">mySum</span><span class="token punctuation">(</span>scores<span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">myAvg</span><span class="token punctuation">(</span>scores<span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>	
+<span class="token punctuation">}</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h4 id="_3-编写makefile文件"><a href="#_3-编写makefile文件" class="header-anchor">#</a> 3.编写makefile文件</h4> <p>格式：（注意：命令command前需要有tab）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>targets : prerequisites
+		command
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><img src="https://img-blog.csdnimg.cn/20200328151551684.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUwOTc5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p> <h4 id="_4-编译执行"><a href="#_4-编译执行" class="header-anchor">#</a> 4.编译执行</h4> <p><img src="https://img-blog.csdnimg.cn/20200328151734930.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjUwOTc5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/21/2020, 2:43:07 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/Linux/" class="prev router-link-active">
+        Linux相关
+      </a></span> <span class="next"><a href="/blog/Linux/c语言实现linux系统中ls-ls-l命令.html">
+        c/c++实现linux系统中ls,ls -l命令
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ef30b5dc.js" defer></script><script src="/assets/js/2.4fe56f19.js" defer></script><script src="/assets/js/8.09a20a41.js" defer></script>
+  </body>
+</html>
